@@ -35,3 +35,10 @@ def get_entry(title):
         return f.read().decode("utf-8")
     except FileNotFoundError:
         return None
+
+def fuck_generator(fuck):
+    """for testing"""
+    fucks = []
+    for i in range(8):
+        fucks.append("fucking")
+    return fucks

@@ -3,6 +3,7 @@ from django.shortcuts import render
 from markdown2 import Markdown
 
 from . import util
+from .util import fuck_generator
 
 
 # #vars for converting md to html
@@ -24,4 +25,5 @@ def entry(request):
 # end new view
 
 def test(request):
-    return render(request, "encyclopedia/test.html")
+    fucks = fuck_generator("fuck")
+    return render(request, "encyclopedia/test.html", {'fucks': fucks})

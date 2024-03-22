@@ -5,6 +5,13 @@
 {% endblock %}
 
 {% block body %}
-<h1>This is a TEST</h1>
+<h1>This is
+
+    {% for fuck in fucks %}
+    {{ fuck }}
+    {% endfor %}
+
+a TEST</h1>
+
 
 {% endblock %}

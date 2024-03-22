@@ -4,10 +4,11 @@ from markdown2 import Markdown
 
 from . import util
 
-#vars for converting md to html
-markdowner = Markdown()
-page = util.get_entry()
-page_converted = markdowner.convert(page)
+
+# #vars for converting md to html
+# markdowner = Markdown()
+# page = util.get_entry()
+# page_converted = markdowner.convert(page)
 #end
 
 def index(request):
@@ -15,9 +16,12 @@ def index(request):
         "entries": util.list_entries()
     })
 
-# start new view
+# start new view (maybe title instead of page?)
 def entry(request):
     return render(request, f"encyclopedia/index/{page}.html", {
         "page": page_converted
     })
 # end new view
+
+def test(request):
+    return render(request, "encyclopedia/test.html")

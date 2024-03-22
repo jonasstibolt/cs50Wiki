@@ -1,9 +1,9 @@
 from django.urls import path
 
 from . import views
-from views import page #added this import
 
 urlpatterns = [
     path("", views.index, name="index"),
-    path("", views.entry, name=f"{page}") #added this path
+    path("test/", views.test, name="test")
+    # path("<str:entry_name>", views.entry, name="entry") #added this path
     ]

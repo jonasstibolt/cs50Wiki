@@ -1,0 +1,6 @@
+#test of gitignore file
+.DS_Store
+
+#.AppleDouble
+#.LSOverride
+#Icon

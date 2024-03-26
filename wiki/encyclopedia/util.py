@@ -39,6 +39,6 @@ def get_entry(title):
 def fuck_generator(fucks):
     """for testing"""
     fucks = []
-    for i in range(569):
+    for i in range(458):
         fucks.append("fucking")
     return fucks

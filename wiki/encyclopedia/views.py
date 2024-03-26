@@ -24,6 +24,19 @@ def randompage(request):
     random_entry = random.choice(entries)
     return redirect('entry', title=random_entry)
 
+def search_results(request):
+    query = request.GET.get('q')
+    if query:
+        entries = util.list_entries()
+        matching_entries = [entry for entry in entries if query.lower() in entry.lower()]
+        if matching_entries:
+            return render(request, "encyclopedia/search_results.html", {"query": query, "entries": matching_entries})
+        else:
+            return render(request, "encyclopedia/search_results.html", {"query": query, "entries": []})
+    else:
+        return render(request, "encyclopedia/index.html")
+    
+
 # start new view (maybe title instead of page?)
 def entry(request, title):
     page = util.get_entry(title)  # Pass the title to get_entry

@@ -1,7 +1,8 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, redirect
 from markdown2 import Markdown
 from . import util
 from .util import fuck_generator
+import random
 
 
 #vars for converting md to html
@@ -12,6 +13,16 @@ def index(request):
     return render(request, "encyclopedia/index.html", {
         "entries": util.list_entries()
     })
+
+def newpage(request):
+    return render(request, "encyclopedia/newpage.html", {
+        "entries": util.list_entries()
+    })
+
+def randompage(request):
+    entries = util.list_entries()
+    random_entry = random.choice(entries)
+    return redirect('entry', title=random_entry)
 
 # start new view (maybe title instead of page?)
 def entry(request, title):

@@ -36,9 +36,9 @@ def get_entry(title):
     except FileNotFoundError:
         return None
 
-def fuck_generator(fuck):
+def fuck_generator(fucks):
     """for testing"""
     fucks = []
-    for i in range(8):
+    for i in range(569):
         fucks.append("fucking")
     return fucks

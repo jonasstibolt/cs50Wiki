@@ -17,13 +17,13 @@ def index(request):
         "entries": util.list_entries()
     })
 
-# start new view (maybe title instead of page?)
-def entry(request):
-    return render(request, f"encyclopedia/index/{page}.html", {
-        "page": page_converted
-    })
-# end new view
+# # start new view (maybe title instead of page?)
+# def entry(request):
+#     return render(request, f"encyclopedia/index/{page}.html", {
+#         "page": page_converted
+#     })
+# # end new view
 
 def test(request):
-    fucks = fuck_generator("fuck")
+    fucks = fuck_generator("can be anything. it just needs a string")
     return render(request, "encyclopedia/test.html", {'fucks': fucks})

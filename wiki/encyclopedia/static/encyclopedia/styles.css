@@ -12,6 +12,7 @@ h1 {
     padding-top: 20px;
 }
 
+
 textarea {
     height: 90vh;
     width: 80%;
@@ -35,4 +36,13 @@ textarea {
 
 .sidebar h2 {
     margin-top: 5px;
+}
+
+.form-field {
+    margin-bottom: 10px;
+}
+
+.has-error {
+    color: red !important;
+    font-weight: bold !important;
 }
